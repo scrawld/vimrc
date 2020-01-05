@@ -4,7 +4,7 @@ set tags=tags;/
 set wrapscan                                    " 启用循环查找方式
 set guifont=Monaco:h10                          " 字体 && 字号
 "set expandtab                                   " 设置tab键换空格
-set tabstop=4                                   " 设置tab键的宽度
+set tabstop=4                                   " Tab键的宽度
 set shiftwidth=4                                " 换行时行间交错使用4个空格
 set autoindent                                  " 自动对齐
 set backspace=2                                 " 设置退格键可用
@@ -28,7 +28,6 @@ set noshowmode                                  " 关闭模式显示mode
 set fenc=utf-8                                  " 设置编码
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
-set tabstop=4                                   " Tab键的宽度
 set softtabstop=4                               " 使得按退格键时可以一次删掉 4 个空格,不足 4 个时删掉所有剩下的空格）
 set noeb                                        " 去掉输入错误的提示声音
 set langmenu=zh_CN.UTF-8                        " 语言设置
@@ -42,6 +41,7 @@ set clipboard=unnamed                           " 共享剪贴板
 set nobackup                                    " 从不备份
 set noswapfile                                  " 禁止生成临时文件
 set ignorecase                                  " 搜索忽略大小写
+set smartcase                                   " 如果有一个大写字母，则切换到大小写敏感查找
 set guioptions-=T                               " 隐藏工具栏
 set guioptions-=m                               " 隐藏菜单栏
 set history=1000                                " 记录历史的行数
@@ -63,8 +63,8 @@ let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowFiles=1
-let NERDTreeShowHidden=1
-let NERDTreeShowLineNumbers=1
+" let NERDTreeShowHidden=1						" 显示隐藏文件
+let NERDTreeShowLineNumbers=1					" 显示行号
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=31
 "let NERDTreeDirArrows=1
@@ -94,10 +94,12 @@ filetype plugin on              " required
 " :PluginClean      - 删除插件，把安装插件对应行删除，然后执行这个命令即可
 
 
-" F7 开启关闭 树形目录
-map <F7> :NERDTree<CR>
+" F6 开启关闭 树形目录
+map <F6> :NERDTree<CR>
 " 为方便复制，用<F2>开启/关闭行号显示:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+" go 自定义命令
+command GoIm GoImports
 
 
 " 设置主题
