@@ -46,7 +46,6 @@ set guioptions-=T                               " 隐藏工具栏
 set guioptions-=m                               " 隐藏菜单栏
 set history=1000                                " 记录历史的行数
 
-
 syntax enable                                   " 打开语法高亮
 syntax on                                       " 开启文件类型侦测
 filetype indent on                              " 针对不同的文件类型采用不同的缩进格式
@@ -98,33 +97,37 @@ filetype plugin on              " required
 map <F6> :NERDTree<CR>
 " 为方便复制，用<F2>开启/关闭行号显示:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-" go 自定义命令
-command GoIm GoImports
-
 
 " 设置主题
 set termguicolors
 set t_Co=256
 colorscheme sublimemonokai
-let g:sublimemonokai_term_italic=1
+let g:sublimemonokai_term_italic = 1
 
-" Go 配置
-let g:go_highlight_format_strings=1
-let g:go_highlight_function_arguments=1
-let g:go_highlight_function_calls=1
-let g:go_highlight_functions=1
-let g:go_highlight_operators=1
-let g:go_highlight_types=1
+" Go 高亮配置
+let g:go_highlight_format_strings = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_variable_declarations = 1
 
-let g:go_highlight_extra_types=1
-let g:go_highlight_fields=1
-let g:go_highlight_generate_tags=1
-let g:go_highlight_variable_assignments=1
-let g:go_highlight_variable_declarations=1
+let g:go_fmt_command = "goimports"
+let g:go_addtags_transform = "camelcase"
+
+" vim-go 快捷键
+let mapleader = "\<space>"
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
 
 " 设置注释块信息
-let $ultisnips_author_name="Rain"
-let $ultisnips_author_email="jiayd163@163.com"
+let $ultisnips_author_name = "ziyang"
+let $ultisnips_author_email = "jiayd163@163.com"
 
 " Markdown
 autocmd VimEnter *.md :TableModeToggle
