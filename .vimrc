@@ -82,6 +82,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'                           " Go 插件
 Plugin 'nsf/gocode', {'rtp': 'vim/'}            " Go 自动补全
 Plugin 'dhruvasagar/vim-table-mode'             " md table 格式化插件
+Plugin 'tpope/vim-fugitive'						" Git 插件
 call vundle#end()               " required 
 filetype plugin on              " required
 
