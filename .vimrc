@@ -94,8 +94,8 @@ filetype plugin on              " required
 " :PluginClean      - 删除插件，把安装插件对应行删除，然后执行这个命令即可
 
 
-" F6 开启关闭 树形目录
-map <F6> :NERDTree<CR>
+" F7 开启关闭 树形目录
+map <F7> :NERDTree<CR>
 " 为方便复制，用<F2>开启/关闭行号显示:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
