@@ -79,7 +79,7 @@ Plugin 'ErichDonGubler/vim-sublime-monokai'     " 主题插件
 Plugin 'itchyny/lightline.vim'                  " 模式插件
 Plugin 'SirVer/ultisnips'                       " tab补齐
 Plugin 'honza/vim-snippets'
-Plugin 'fatih/vim-go'                           " Go 插件
+Plugin 'fatih/vim-go'                           " Go 插件 :GoInstallBinaries
 Plugin 'nsf/gocode', {'rtp': 'vim/'}            " Go 自动补全
 Plugin 'dhruvasagar/vim-table-mode'             " md table 格式化插件
 Plugin 'tpope/vim-fugitive'						" Git 插件
