@@ -124,11 +124,19 @@ let g:go_highlight_operators = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
+let g:go_referrers_mode = 'gopls'
 
 " vim-go 快捷键
 let mapleader = ","
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>m <Plug>(go-imports)
+autocmd FileType go nmap <leader>e <Plug>(go-iferr)
+
+command GoIm GoImports
+command GoRef GoReferrers
+" command GoFS GoFillStruct
 
 " 设置注释块信息
 let $ultisnips_author_name = "ziyang"
