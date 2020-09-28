@@ -131,11 +131,12 @@ let mapleader = ","
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <leader>m <Plug>(go-imports)
-autocmd FileType go nmap <leader>e <Plug>(go-iferr)
+autocmd FileType go nmap <leader>im <Plug>(go-imports)
+autocmd FileType go nmap <leader>iferr <Plug>(go-iferr)
+autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
 
-command GoIm GoImports
-command GoRef GoReferrers
+" command GoIm GoImports
+" command GoRef GoReferrers
 " command GoFS GoFillStruct
 
 " 设置注释块信息
