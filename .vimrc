@@ -135,9 +135,9 @@ autocmd FileType go nmap <leader>im <Plug>(go-imports)
 autocmd FileType go nmap <leader>iferr <Plug>(go-iferr)
 autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
 
+command Gofs GoFillStruct
 " command GoIm GoImports
 " command GoRef GoReferrers
-" command GoFS GoFillStruct
 
 " 设置注释块信息
 let $ultisnips_author_name = "ziyang"
