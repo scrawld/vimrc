@@ -125,6 +125,7 @@ let g:go_highlight_operators = 1
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
 let g:go_referrers_mode = 'gopls'
+let g:go_def_mod_mode='godef'
 
 " vim-go 快捷键
 let mapleader = ","
