@@ -76,7 +76,7 @@ set rtp+=~/.vim/bundle/Vundle.vim               " 启用vundle来管理vim插件
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'                    " 树形目录
-Plugin 'ErichDonGubler/vim-sublime-monokai'     " 主题插件
+Plugin 'ErichDonGubler/vim-sublime-monokai'     " 主题插件 https://vimcolors.com/
 Plugin 'itchyny/lightline.vim'                  " 模式插件
 Plugin 'SirVer/ultisnips'                       " tab补齐
 Plugin 'honza/vim-snippets'
