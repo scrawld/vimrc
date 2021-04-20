@@ -1,6 +1,5 @@
-"ctags
+" vimrc
 set tags=tags;/
-
 set t_u7=										" set t_u7= or set ambw=double 临时解决vim默认进入 REPLACE 模式(https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode)
 set wrapscan                                    " 启用循环查找方式
 set guifont=Monaco:h10                          " 字体 && 字号
@@ -46,6 +45,8 @@ set smartcase                                   " 如果有一个大写字母，
 set guioptions-=T                               " 隐藏工具栏
 set guioptions-=m                               " 隐藏菜单栏
 set history=1000                                " 记录历史的行数
+set termguicolors
+set t_Co=256									" Make vim look better in putty.
 
 syntax enable                                   " 打开语法高亮
 syntax on                                       " 开启文件类型侦测
@@ -58,20 +59,12 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" NERDtee设定
-let NERDChristmasTree=1
-let NERDTreeAutoCenter=1
-let NERDTreeShowBookmarks=1
-let NERDTreeShowFiles=1
-" let NERDTreeShowHidden=1						" 显示隐藏文件
-let NERDTreeShowLineNumbers=1					" 显示行号
-let NERDTreeWinPos='left'
-let NERDTreeWinSize=31
-"let NERDTreeDirArrows=1
-"let NERDTreeDirArrowExpandable='▸'
-"let NERDTreeDirArrowCollapsible='▾'
-"let NERDTreeGlyphReadOnly='RO'
+" 为方便复制，用<F2>开启/关闭行号显示:
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
+"
+" vundle
+"
 set rtp+=~/.vim/bundle/Vundle.vim               " 启用vundle来管理vim插件
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -84,6 +77,7 @@ Plugin 'fatih/vim-go'                           " Go 插件 :GoInstallBinaries
 Plugin 'nsf/gocode', {'rtp': 'vim/'}            " Go 自动补全
 Plugin 'dhruvasagar/vim-table-mode'             " md table 格式化插件
 Plugin 'tpope/vim-fugitive'						" Git 插件
+Plugin 'kien/ctrlp.vim'							" 文件搜索
 call vundle#end()               " required 
 filetype plugin on              " required
 
@@ -94,55 +88,70 @@ filetype plugin on              " required
 " :PluginSearch     - 搜索插件，例如 :PluginSearch xml就能搜到xml相关的插件
 " :PluginClean      - 删除插件，把安装插件对应行删除，然后执行这个命令即可
 
-
-" F7 开启关闭 树形目录
+"
+" NERDTree
+"
 map <F7> :NERDTree<CR>
-" 为方便复制，用<F2>开启/关闭行号显示:
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeShowHidden=0						" 显示隐藏文件
+let g:NERDTreeShowLineNumbers=1					" 显示行号
+let g:NERDTreeWinSize=30
+"let g:NERDTreeDirArrowExpandable='▸'
+"let g:NERDTreeDirArrowCollapsible='▾'
 
-" 设置主题
-set termguicolors
-set t_Co=256
+"
+" vim-sublime-monokai
+"
 colorscheme sublimemonokai
 let g:sublimemonokai_term_italic = 1
 
-" Go 高亮配置
+"
+" ctrlp
+"
+" Making CtrlP.vim load 100x faster — A Tiny Piece of Vim — Medm
+" https://medium.com/a-tiny-piece-of-vim/making-ctrlp-vim-load-100x-faster-7a722fae7df6#.emcvo89nx
+let g:ctrlp_user_command = [
+            \ '.git/',
+            \ 'git --git-dir=%s/.git ls-files -oc --exclude-standard'
+            \ ]
+let g:ctrlp_match_window       = 'bottom,order:btt,min:5,max:5,results:10'
+let g:ctrlp_cmd                = 'CtrlPMixed'
+let g:ctrlp_mruf_default_order = 1
+
+"
+" go-vim
+"
 let g:go_highlight_format_strings = 1
-let g:go_highlight_function_arguments = 1
-let g:go_highlight_function_calls = 1
 let g:go_highlight_functions = 1
+"let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
-" Vim becomes sluggish while editing Go files Don't enable these options
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
+"let g:go_highlight_structs = 1
+"let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
-
+let g:go_version_warning = 0
+let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
-let g:go_referrers_mode = 'gopls'
-let g:go_def_mod_mode='godef'
-
-" vim-go 快捷键
-let mapleader = ","
+let mapleader = "," " vim-go 快捷键
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <leader>im <Plug>(go-imports)
-autocmd FileType go nmap <leader>iferr <Plug>(go-iferr)
 autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
-
 command Gofs GoFillStruct
-" command GoIm GoImports
-" command GoRef GoReferrers
 
-" 设置注释块信息
+"
+" ultisnips 设置注释块信息
+"
 let $ultisnips_author_name = "ziyang"
 let $ultisnips_author_email = "jiayd163@163.com"
 
+"
 " Markdown
+"
 autocmd VimEnter *.md :TableModeToggle
