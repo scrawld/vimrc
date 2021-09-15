@@ -155,3 +155,4 @@ let $ultisnips_author_email = "jiayd163@163.com"
 " Markdown
 "
 autocmd VimEnter *.md :TableModeToggle
+autocmd FileType markdown nnoremap <F9> :TableModeToggle<CR>
