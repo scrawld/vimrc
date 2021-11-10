@@ -55,9 +55,10 @@ filetype plugin on                              " 针对不同的文件类型加
 filetype plugin indent on                       " 启用自动补全
 
 " ======= 恢复上次文件打开位置 ======= "
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+"if has("autocmd")
+"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"endif
+autocmd BufReadPost * normal! `"
 
 " 为方便复制，用<F2>开启/关闭行号显示:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
