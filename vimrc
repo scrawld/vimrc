@@ -48,46 +48,44 @@ set history=1000                                " 记录历史的行数
 set termguicolors
 set t_Co=256									" Make vim look better in putty.
 
-syntax enable                                   " 打开语法高亮
-syntax on                                       " 开启文件类型侦测
-filetype indent on                              " 针对不同的文件类型采用不同的缩进格式
-filetype plugin on                              " 针对不同的文件类型加载对应的插件
-filetype plugin indent on                       " 启用自动补全
+syntax enable                                   " 启用语法高亮度
+syntax on                                       " 针对所有缓冲区中的文件启用语法高亮度
+filetype plugin indent on                       " 打开文件类型检测
 
 " ======= 恢复上次文件打开位置 ======= "
-"if has("autocmd")
-"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"endif
-autocmd BufReadPost * normal! `"
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+"autocmd BufReadPost * normal! `"
 
 " 为方便复制，用<F2>开启/关闭行号显示:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "
-" vundle
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
-set rtp+=~/.vim/bundle/Vundle.vim               " 启用vundle来管理vim插件
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'                    " 树形目录
-Plugin 'ErichDonGubler/vim-sublime-monokai'     " 主题插件 https://vimcolors.com/
-Plugin 'itchyny/lightline.vim'                  " 模式插件
-Plugin 'SirVer/ultisnips'                       " tab补齐
-Plugin 'honza/vim-snippets'
-Plugin 'fatih/vim-go'                           " Go 插件 :GoInstallBinaries
-Plugin 'nsf/gocode', {'rtp': 'vim/'}            " Go 自动补全
-Plugin 'dhruvasagar/vim-table-mode'             " md table 格式化插件
-Plugin 'tpope/vim-fugitive'						" Git 插件
-Plugin 'kien/ctrlp.vim'							" 文件搜索
-call vundle#end()               " required 
-filetype plugin on              " required
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'							" 树形目录
+Plug 'ErichDonGubler/vim-sublime-monokai'			" 主题插件 https://vimcolors.com/
+Plug 'itchyny/lightline.vim'						" 模式插件
+Plug 'SirVer/ultisnips'								" tab补齐
+Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}	" Go 插件
+Plug 'nsf/gocode', {'rtp': 'vim/'}					" Go 自动补全
+Plug 'dhruvasagar/vim-table-mode'					" md table 格式化插件
+Plug 'tpope/vim-fugitive'							" Git 插件
+Plug 'kien/ctrlp.vim'								" 文件搜索
+call plug#end()
 
 " 常用命令
-" :PluginList       - 查看已经安装的插件
-" :PluginInstall    - 安装插件
-" :PluginUpdate     - 更新插件
-" :PluginSearch     - 搜索插件，例如 :PluginSearch xml就能搜到xml相关的插件
-" :PluginClean      - 删除插件，把安装插件对应行删除，然后执行这个命令即可
+" PlugInstall [name ...] [#threads]		安装插件
+" PlugUpdate [name ...] [#threads]		安装或更新插件
+" PlugClean[!]							删除未列出的插件 (bang版本会在没有提示的情况下清理)
+" PlugUpgrade							升级vim-plug本身
+" PlugStatus							检查插件的状态
+" PlugDiff								检查上一次更新的变化和待定的变化
+" PlugSnapshot[!] [输出路径]			生成用于恢复插件当前快照的脚本
 
 "
 " NERDTree
@@ -124,7 +122,6 @@ let g:ctrlp_mruf_default_order = 1
 "
 let g:go_highlight_format_strings = 1
 let g:go_highlight_functions = 1
-"let g:go_highlight_function_arguments = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -132,19 +129,20 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
-"let g:go_highlight_structs = 1
-"let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
+
 let g:go_version_warning = 0
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
+
 let mapleader = "," " vim-go 快捷键
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
 command Gofs GoFillStruct
+" :GoMetaLinter
 
 "
 " ultisnips 设置注释块信息
