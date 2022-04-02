@@ -4,7 +4,7 @@
 
 如果您之前有定制自己的`Vim`配置，**请先备份`~/.vim`目录**，以下操作会覆盖`~/.vim`目录
 ```bash
-wget https://github.com/scrawld/vimrc/releases/download/v0.0.2/vim-ide-20220402.tar.gz && tar zcvf ./vim-ide-20220402.tar.gz -C ~
+wget https://github.com/scrawld/vimrc/releases/download/v0.0.2/vim-ide-20220402.tar.gz && tar zxvf ./vim-ide-20220402.tar.gz -C ~
 ```
 
 ## Uninstall (卸载)
