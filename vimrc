@@ -65,13 +65,12 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
 call plug#begin()
-Plug 'VundleVim/Vundle.vim'
 Plug 'scrooloose/nerdtree'							" 树形目录
 Plug 'ErichDonGubler/vim-sublime-monokai'			" 主题插件 https://vimcolors.com/
 Plug 'itchyny/lightline.vim'						" 模式插件
 Plug 'SirVer/ultisnips'								" tab补齐
 Plug 'honza/vim-snippets'
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}	" Go 插件
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}	" Go 插件
 Plug 'nsf/gocode', {'rtp': 'vim/'}					" Go 自动补全
 Plug 'dhruvasagar/vim-table-mode'					" md table 格式化插件
 Plug 'tpope/vim-fugitive'							" Git 插件
