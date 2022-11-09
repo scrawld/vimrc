@@ -1,9 +1,8 @@
 " vimrc
 set tags=tags;/
-set t_u7=										" set t_u7= or set ambw=double 临时解决vim默认进入 REPLACE 模式(https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode)
 set wrapscan                                    " 启用循环查找方式
 set guifont=Monaco:h10                          " 字体 && 字号
-"set expandtab                                   " 设置tab键换空格
+set noexpandtab                                 " 设置tab键换空格
 set tabstop=4                                   " Tab键的宽度
 set shiftwidth=4                                " 换行时行间交错使用4个空格
 set autoindent                                  " 自动对齐
