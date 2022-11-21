@@ -36,7 +36,7 @@ set magic                                       " 设置魔法
 set novisualbell                                " 不要闪烁
 set showcmd                                     " 显示输入的命令
 set fillchars=vert:\ ,stl:\ ,stlnc:\            " 在被分割的窗口间显示空白，便于阅读
-set clipboard=unnamed                           " 共享剪贴板 
+"set clipboard=unnamed                           " 共享剪贴板 
 set nobackup                                    " 从不备份
 set noswapfile                                  " 禁止生成临时文件
 set ignorecase                                  " 搜索忽略大小写
