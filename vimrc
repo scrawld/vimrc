@@ -1,5 +1,6 @@
 " vimrc
 set tags=tags;/
+set guicursor=									" 禁用光标形状更改
 set wrapscan                                    " 启用循环查找方式
 set guifont=Monaco:h10                          " 字体 && 字号
 set noexpandtab                                 " 设置tab键换空格
