@@ -63,11 +63,12 @@ endif
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" plug安装 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" 插件搜索 https://vimawesome.com/
 "
 call plug#begin()
 Plug 'scrooloose/nerdtree'							" 树形目录
-Plug 'ErichDonGubler/vim-sublime-monokai'			" 主题插件 https://vimcolors.com/
+Plug 'ErichDonGubler/vim-sublime-monokai'			" 主题插件 https://vimcolorschemes.com/
 Plug 'itchyny/lightline.vim'						" 模式插件
 Plug 'SirVer/ultisnips'								" tab补齐
 Plug 'honza/vim-snippets'
