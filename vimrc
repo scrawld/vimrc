@@ -47,6 +47,8 @@ set history=1000                                " 记录历史的行数
 set termguicolors
 set t_Co=256									" Make vim look better in putty.
 
+let mapleader = ","								" 定义快捷键的前缀键
+
 syntax enable                                   " 启用语法高亮度
 syntax on                                       " 针对所有缓冲区中的文件启用语法高亮度
 filetype plugin indent on                       " 打开文件类型检测
@@ -89,6 +91,7 @@ call plug#end()
 " NERDTree
 "
 map <F7> :NERDTree<CR>
+nmap <leader>3 :NERDTreeFind<CR>
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeShowHidden=0						" 显示隐藏文件
 let g:NERDTreeShowLineNumbers=1					" 显示行号
@@ -134,8 +137,7 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
 
-let mapleader = "," " vim-go 快捷键
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
