@@ -71,12 +71,12 @@ Plug 'scrooloose/nerdtree'							" 树形目录
 Plug 'ErichDonGubler/vim-sublime-monokai'			" 主题插件 https://vimcolorschemes.com/
 Plug 'itchyny/lightline.vim'						" 模式插件
 Plug 'SirVer/ultisnips'								" tab补齐
-Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'							" 代码片段
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}	" Go 插件
-Plug 'nsf/gocode', {'rtp': 'vim/'}					" Go 自动补全
 Plug 'dhruvasagar/vim-table-mode'					" md table 格式化插件
 Plug 'tpope/vim-fugitive'							" Git 插件
 Plug 'kien/ctrlp.vim'								" 文件搜索
+Plug 'vim-syntastic/syntastic'						" 语法检查
 call plug#end()
 
 " 常用命令
@@ -144,6 +144,12 @@ autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
 command Gofs GoFillStruct
 " :GoMetaLinter
+
+"
+" syntastic 语法检查 https://github.com/vim-syntastic/syntastic/blob/f2ddb480c5afa1c0f155d78e6fc7853fd20f0420/doc/syntastic.txt
+"
+let g:syntastic_enable_signs = 0
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 "
 " ultisnips 设置注释块信息
