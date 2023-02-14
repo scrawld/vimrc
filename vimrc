@@ -123,7 +123,6 @@ let g:ctrlp_mruf_default_order = 1
 "
 " go-vim
 "
-let g:go_highlight_format_strings = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
@@ -133,10 +132,6 @@ let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_operators = 1
-
-let g:go_version_warning = 0
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
 
 autocmd FileType go nmap <leader>i <Plug>(go-info)
@@ -145,6 +140,7 @@ autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
 command Gofs GoFillStruct
 " :GoMetaLinter
+" :GoAddTags json
 
 "
 " syntastic 语法检查 https://github.com/vim-syntastic/syntastic/blob/f2ddb480c5afa1c0f155d78e6fc7853fd20f0420/doc/syntastic.txt
