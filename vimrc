@@ -1,6 +1,6 @@
 " vimrc
 set tags=tags;/
-set guicursor=									" 禁用光标形状更改
+set guicursor=                                  " 禁用光标形状更改
 set wrapscan                                    " 启用循环查找方式
 set guifont=Monaco:h10                          " 字体 && 字号
 set noexpandtab                                 " 设置tab键换空格
@@ -46,10 +46,11 @@ set guioptions-=T                               " 隐藏工具栏
 set guioptions-=m                               " 隐藏菜单栏
 set history=1000                                " 记录历史的行数
 set termguicolors
-set t_Co=256									" Make vim look better in putty.
+set t_Co=256                                    " Make vim look better in putty.
 
-let mapleader = ","								" 定义快捷键的前缀键
-"let g:markdown_recommended_style = 0			" 禁用Markdown推荐样式
+let mapleader = ","                             " 定义快捷键的前缀键
+"let g:markdown_recommended_style=0              " 禁用Markdown推荐样式
+let g:yaml_recommended_style=0                  " 禁用yaml推荐样式
 
 syntax enable                                   " 启用语法高亮度
 syntax on                                       " 针对所有缓冲区中的文件启用语法高亮度
@@ -61,34 +62,36 @@ if has("autocmd")
 endif
 "autocmd BufReadPost * normal! `"
 
-" 为方便复制，用<F2>开启/关闭行号显示:
+" 为方便复制,用<F2>开启/关闭行号显示:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+" 切换粘贴板共享状态
+nnoremap <F4> :if &clipboard == '' \| set clipboard=unnamed \| else \| set clipboard= \| endif<CR>:echo &clipboard<CR>
 
 "
 " plug安装 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " 插件搜索 https://vimawesome.com/
 "
 call plug#begin()
-Plug 'scrooloose/nerdtree'							" 树形目录
-Plug 'ErichDonGubler/vim-sublime-monokai'			" 主题插件 https://vimcolorschemes.com/
-Plug 'itchyny/lightline.vim'						" 模式插件
-Plug 'SirVer/ultisnips'								" tab补齐
-Plug 'honza/vim-snippets'							" 代码片段
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}	" Go 插件
-Plug 'dhruvasagar/vim-table-mode'					" md table 格式化插件
-Plug 'tpope/vim-fugitive'							" Git 插件
-Plug 'kien/ctrlp.vim'								" 文件搜索
-Plug 'vim-syntastic/syntastic'						" 语法检查
+Plug 'scrooloose/nerdtree'                         " 树形目录
+Plug 'ErichDonGubler/vim-sublime-monokai'          " 主题插件 https://vimcolorschemes.com/
+Plug 'itchyny/lightline.vim'                       " 模式插件
+Plug 'SirVer/ultisnips'                            " tab补齐
+Plug 'honza/vim-snippets'                          " 代码片段
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}   " Go 插件
+Plug 'dhruvasagar/vim-table-mode'                  " md table 格式化插件
+Plug 'tpope/vim-fugitive'                          " Git 插件
+Plug 'kien/ctrlp.vim'                              " 文件搜索
+Plug 'vim-syntastic/syntastic'                     " 语法检查
 call plug#end()
 
 " 常用命令
-" PlugInstall [name ...] [#threads]		安装插件
-" PlugUpdate [name ...] [#threads]		安装或更新插件
-" PlugClean[!]							删除未列出的插件 (bang版本会在没有提示的情况下清理)
-" PlugUpgrade							升级vim-plug本身
-" PlugStatus							检查插件的状态
-" PlugDiff								检查上一次更新的变化和待定的变化
-" PlugSnapshot[!] [输出路径]			生成用于恢复插件当前快照的脚本
+" PlugInstall [name ...] [#threads]   安装插件
+" PlugUpdate [name ...] [#threads]    安装或更新插件
+" PlugClean[!]                        删除未列出的插件 (bang版本会在没有提示的情况下清理)
+" PlugUpgrade                         升级vim-plug本身
+" PlugStatus                          检查插件的状态
+" PlugDiff                            检查上一次更新的变化和待定的变化
+" PlugSnapshot[!] [输出路径]          生成用于恢复插件当前快照的脚本
 
 "
 " NERDTree
@@ -96,8 +99,8 @@ call plug#end()
 map <F7> :NERDTree<CR>
 nmap <leader>3 :NERDTreeFind<CR>
 let g:NERDTreeShowBookmarks=1
-let g:NERDTreeShowHidden=0						" 显示隐藏文件
-let g:NERDTreeShowLineNumbers=1					" 显示行号
+let g:NERDTreeShowHidden=0           " 显示隐藏文件
+let g:NERDTreeShowLineNumbers=1      " 显示行号
 let g:NERDTreeWinSize=30
 "let g:NERDTreeDirArrowExpandable='▸'
 "let g:NERDTreeDirArrowCollapsible='▾'
