@@ -50,7 +50,7 @@ set t_Co=256                                    " Make vim look better in putty.
 
 let mapleader = ","                             " 定义快捷键的前缀键
 "let g:markdown_recommended_style=0              " 禁用Markdown推荐样式
-let g:yaml_recommended_style=0                  " 禁用yaml推荐样式
+"let g:yaml_recommended_style=0                  " 禁用yaml推荐样式
 
 syntax enable                                   " 启用语法高亮度
 syntax on                                       " 针对所有缓冲区中的文件启用语法高亮度
