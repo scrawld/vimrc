@@ -77,7 +77,7 @@ Plug 'ErichDonGubler/vim-sublime-monokai'          " 主题插件 https://vimcol
 Plug 'itchyny/lightline.vim'                       " 模式插件
 Plug 'SirVer/ultisnips'                            " tab补齐
 Plug 'honza/vim-snippets'                          " 代码片段
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}   " Go 插件
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}   " Go 插件 首次安装执行 :GoInstallBinaries 该命令将 go install 所有必需的二进制文件
 Plug 'dhruvasagar/vim-table-mode'                  " md table 格式化插件
 Plug 'tpope/vim-fugitive'                          " Git 插件
 Plug 'kien/ctrlp.vim'                              " 文件搜索
