@@ -155,8 +155,8 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "
 " ultisnips 设置注释块信息
 "
-let $ultisnips_author_name = "ziyang"
-let $ultisnips_author_email = "jiayd163@163.com"
+let $ultisnips_author_name = "AuthorName"
+let $ultisnips_author_email = "AuthorEmail@163.com"
 
 "
 " Markdown
