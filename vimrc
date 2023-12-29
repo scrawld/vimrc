@@ -3,7 +3,7 @@ set tags=tags;/
 set guicursor=                                  " 禁用光标形状更改
 set wrapscan                                    " 启用循环查找方式
 set guifont=Monaco:h10                          " 字体 && 字号
-set noexpandtab                                 " 设置tab键换空格
+set expandtab                                   " 设置tab键换空格
 set tabstop=4                                   " Tab键的宽度
 set shiftwidth=4                                " 换行时行间交错使用4个空格
 set autoindent                                  " 自动对齐
