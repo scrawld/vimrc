@@ -136,7 +136,7 @@ let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_operators = 1
-let g:go_addtags_transform = "camelcase"
+"let g:go_addtags_transform = "camelcase"
 
 autocmd FileType go nmap <leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
