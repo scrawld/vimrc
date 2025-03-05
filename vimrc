@@ -81,7 +81,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}   " Go 插件 首次安装执�
 Plug 'dhruvasagar/vim-table-mode'                  " md table 格式化插件
 Plug 'tpope/vim-fugitive'                          " Git 插件
 Plug 'kien/ctrlp.vim'                              " 文件搜索
-Plug 'vim-syntastic/syntastic'                     " 语法检查
+Plug 'neoclide/coc.nvim', {'branch': 'release'}    " LSP 客户端插件，提供 代码补全、错误检查、跳转、重命名等 IDE 级功能
 call plug#end()
 
 " 常用命令
@@ -145,12 +145,6 @@ autocmd FileType go nmap <leader>ref <Plug>(go-referrers)
 command Gofs GoFillStruct
 " :GoMetaLinter
 " :GoAddTags json
-
-"
-" syntastic 语法检查 https://github.com/vim-syntastic/syntastic/blob/f2ddb480c5afa1c0f155d78e6fc7853fd20f0420/doc/syntastic.txt
-"
-let g:syntastic_enable_signs = 0
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 "
 " ultisnips 设置注释块信息
