@@ -1,1 +1,4 @@
-{}
+{
+    // 诊断符号显示的最小级别(null:所有级别, hint, information, warning, error)
+    "diagnostic.signLevel": "warning"
+}

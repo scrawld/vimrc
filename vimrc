@@ -11,6 +11,7 @@ set backspace=2                                 " 设置退格键可用
 set cindent shiftwidth=4                        " 自动缩进4空格
 set smartindent                                 " 智能自动缩进
 set ai!                                         " 设置自动缩进
+set signcolumn=yes                              " 显示标志列
 set nu!                                         " 显示行号
 set foldmethod=indent                           " 代码折叠方案
 set showmatch                                   " 显示括号配对，当键入“]”“)”时，高亮度显示匹配的括号
@@ -157,3 +158,9 @@ let $ultisnips_author_email = "AuthorEmail@163.com"
 "
 autocmd VimEnter *.md :TableModeToggle
 autocmd FileType markdown nnoremap <F9> :TableModeToggle<CR>
+
+"
+" coc.nvim
+"
+" 使coc.nvim在启动时安装扩展
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-translator']
