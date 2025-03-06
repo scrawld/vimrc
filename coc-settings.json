@@ -1,4 +1,8 @@
 {
     // 诊断符号显示的最小级别(null:所有级别, hint, information, warning, error)
-    "diagnostic.signLevel": "warning"
+    "diagnostic.signLevel": "warning",
+
+    "translator.enableHover": true,
+    "translator.toLang": "zh",
+    "translator.engines": ["bing", "youdao", "haici"]
 }
