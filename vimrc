@@ -98,7 +98,11 @@ call plug#end()
 " NERDTree
 "
 map <F7> :NERDTree<CR>
-nmap <leader>3 :NERDTreeFind<CR>
+" 切换目录树显示
+nnoremap <leader>g :NERDTreeToggle<CR>
+" 查找并定位当前文件
+nnoremap <leader>v :NERDTreeFind<CR>
+
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeShowHidden=0           " 显示隐藏文件
 let g:NERDTreeShowLineNumbers=1      " 显示行号
