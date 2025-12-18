@@ -167,14 +167,4 @@ autocmd FileType markdown nnoremap <F9> :TableModeToggle<CR>
 " coc.nvim
 "
 " 使coc.nvim在启动时安装扩展
-let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-translator']
-" coc-translator键盘映射
-" 弹出浮动窗口显示翻译结果
-nmap <Leader>ct <Plug>(coc-translator-p)
-vmap <Leader>ct <Plug>(coc-translator-pv)
-" 直接在命令行回显翻译结果
-nmap <Leader>cte <Plug>(coc-translator-e)
-vmap <Leader>cte <Plug>(coc-translator-ev)
-" 直接替换选中的文本为翻译结果
-nmap <Leader>ctr <Plug>(coc-translator-r)
-vmap <Leader>ctr <Plug>(coc-translator-rv)
+let g:coc_global_extensions = ['coc-json', 'coc-go']
