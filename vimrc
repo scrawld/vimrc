@@ -142,6 +142,12 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_operators = 1
 "let g:go_addtags_transform = "camelcase"
+let g:go_gopls_enabled = 1
+let g:go_fillstruct_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+let g:go_referrers_mode = 'gopls'
+let g:go_rename_command = 'gopls'
+let g:go_imports_mode = 'gopls'
 
 autocmd FileType go nmap <leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
